@@ -14,8 +14,7 @@ const HomeComponent= ()=>{
     
     return(
         <Card>
-            <CardTitle>Score{score}</CardTitle>
-            <QuizComponent addScore={addScore} resetScore={resetScore} drcScore={decreaseScore}/>
+            <QuizComponent addScore={addScore} resetScore={resetScore} drcScore={decreaseScore} score={score}/>
         </Card>
     )
 }

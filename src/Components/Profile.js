@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 const ProfileComponent= ()=>{
     return(
         <div>
-           Profile Component
+          Coming Soon
         </div>
     )
 }
