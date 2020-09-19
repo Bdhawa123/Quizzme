@@ -9,7 +9,7 @@ import Home from './Home';
 const NavBar = ()=>(
     <div>        
         <Navbar color='light'>
-            <NavbarBrand>Header Component</NavbarBrand>
+            <NavbarBrand>Quizz em all</NavbarBrand>
             
             <Link to ="/Home">Home</Link>
             <Link to ="/Profile">Profile</Link>

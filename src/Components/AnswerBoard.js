@@ -1,10 +1,10 @@
 import { getDefaultNormalizer } from '@testing-library/react';
 import React from 'react';
-import {Card, CardTitle,CardBody } from 'reactstrap';
+import {Card, CardTitle,CardBody,Button } from 'reactstrap';
 import question from '../questions/question'; 
 
 
-const AnswerBoard =({score})=>{
+const AnswerBoard =({score,showAnswerBoard})=>{
     console.log(question);
     return(
         <div>
@@ -14,9 +14,9 @@ const AnswerBoard =({score})=>{
                     <CardBody>
                         <div>{qs.options[qs.answer]}</div>
                     </CardBody>
-
                 </Card>);
             })}
+            <Button onClick={showAnswerBoard}>Restart Quiz</Button>
         </div>
     )
 }

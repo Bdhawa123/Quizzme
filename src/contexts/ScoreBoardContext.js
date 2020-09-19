@@ -4,6 +4,8 @@ export const ScoreBoardContext = createContext();
 
 const ScoreBoardContextProvider = (props) =>{
     const [score,setScore] = useState(0);
+    const [tries,setTries] =useState(0);
+    const [successRate,setsuccessRate] = useState(0);
 
     const addScore=()=>{
         let newscore = score+1;
@@ -12,6 +14,20 @@ const ScoreBoardContextProvider = (props) =>{
 
     const resetScore = ()=>{
         setScore(0);
+    }
+
+    const increaseTries = ()=>{
+        setTries((tries+1));
+    }
+
+    const SuccessRate=(rate)=>{
+        if(successRate==0){
+            setsuccessRate(rate)
+        }else{
+            let calculate = (successRate+rate)/2
+            setsuccessRate(calculate);
+        }
+        console.log(successRate);
     }
     
     const decreaseScore=()=>{
@@ -23,7 +39,7 @@ const ScoreBoardContextProvider = (props) =>{
     }
 
     return(
-        <ScoreBoardContext.Provider value={{score,addScore,resetScore, decreaseScore}}>{props.children}</ScoreBoardContext.Provider>
+        <ScoreBoardContext.Provider value={{score,addScore,resetScore, decreaseScore, increaseTries,SuccessRate,successRate,tries}}>{props.children}</ScoreBoardContext.Provider>
     );
 
 }

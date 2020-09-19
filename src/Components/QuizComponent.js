@@ -7,24 +7,24 @@ import AnswerBoard from './AnswerBoard';
     /* Decoupling of quiz component */ 
 
     
-let attendedQlist= [];                                       // storing and removing correct answer for questions.
+let attendedQlist= [];                                                // storing and removing correct answer for questions.
 
-const QuizComponent =({addScore,resetScore,drcScore,score})=>{
+const QuizComponent =({addScore,resetScore,drcScore,score,increaseTries,SuccessRate})=>{
     const [Qno, setQno]=useState(0);
-    const [prev, setPrev]=useState(false);                  //next previous mechanism
+    const [prev, setPrev]=useState(false);                            //next previous mechanism
     const [nxt, setNxt]=useState(true);
-    const [modal, setModal] = useState(false);                //modal for showing scoreboard
-    const [answerboard, setAnswerboard] = useState(false);  //answerboard
+    const [modal, setModal] = useState(false);                        //modal for showing scoreboard
+    const [answerboard, setAnswerboard] = useState(false);            //answerboard
     
 
-    let currentQuestion = question[Qno];                    // aligned to state to change on next and previous
+    let currentQuestion = question[Qno];                              // aligned to state to change on next and previous
     let options = currentQuestion.options;
     let answer = currentQuestion.answer;
- 
+    
 
     const qsans=(id,answer)=>{
 
-        if(!attendedQlist.includes(Qno)){                   //mechanism for collecting answer once only 
+        if(!attendedQlist.includes(Qno)){                               //mechanism for collecting answer once only 
 
             if(id==answer){
                 attendedQlist.push(Qno);
@@ -37,26 +37,34 @@ const QuizComponent =({addScore,resetScore,drcScore,score})=>{
                   return value!=Qno;
                 });
             }
-        }
-        
+        } 
         next();
     }
 
     const showAnswerBoard=()=>{
-        setAnswerboard(true);
+        setAnswerboard(!answerboard);
         setModal(false);
+        reset();
     }
 
     const submit = ()=>{
+        increaseTries();
+        console.log(question.length);
+        console.log('length'+score/question.length)
+        let scorePercent = score/question.length
+        SuccessRate(scorePercent)
         console.log('clicked on submit');
         setModal(true);
     }
 
+    //  Reset ScoreBoard and reset question
     const reset=()=>{
+        attendedQlist.length=0;                                                         //reset array 
         setQno(0);
         resetScore();
         setPrev(false)
         setNxt(true);
+        setModal(false);
     }
     
 
@@ -74,7 +82,7 @@ const QuizComponent =({addScore,resetScore,drcScore,score})=>{
 
         }
         else{
-            alert('No more question after');
+          
         }
     }
 
@@ -110,22 +118,23 @@ const QuizComponent =({addScore,resetScore,drcScore,score})=>{
                 {nxt?<Button onClick={next}>Next</Button>:null}
                 {(!nxt)?<Button onClick={submit}>Submit</Button>:null}
                 <Button onClick={reset}>Reset</Button>
+            </div>
+            :null}
 
+            {/* Modal Component */}
 
                 <Modal isOpen={modal}>
                     <Card>
                         <CardTitle> SCORE</CardTitle>
                             <CardBody>{score}</CardBody>
                     </Card>
-                                                                                        {/* Score board */}
                     <Button onClick={showAnswerBoard}>Show Answers</Button>                                                {/* On click trigger */}
-                    
+                    <Button onClick={reset}>Restart</Button>
+               
                 </Modal>
-            </div>
-            :null}
 
             {/* Answer board */}
-            {answerboard?<AnswerBoard score={score} />:null}
+            {answerboard?<AnswerBoard score={score} showAnswerBoard={showAnswerBoard}/>:null}
 
         </div>
     )

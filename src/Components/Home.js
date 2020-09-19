@@ -9,12 +9,13 @@ import {ScoreBoardContext} from '../contexts/ScoreBoardContext';
     
 const HomeComponent= ()=>{
     
-    const {score,addScore,resetScore,decreaseScore} = useContext(ScoreBoardContext);
+    const {score,addScore,resetScore,decreaseScore,increaseTries,SuccessRate,successRate} = useContext(ScoreBoardContext);
+    console.log('successrate'+successRate);
     
     
     return(
         <Card>
-            <QuizComponent addScore={addScore} resetScore={resetScore} drcScore={decreaseScore} score={score}/>
+            <QuizComponent addScore={addScore} resetScore={resetScore} drcScore={decreaseScore} score={score} increaseTries={increaseTries} SuccessRate={SuccessRate}/>
         </Card>
     )
 }
