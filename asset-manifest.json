@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Quizzme/static/css/main.1797f2cd.chunk.css",
+    "main.js": "/Quizzme/static/js/main.9f316726.chunk.js",
+    "main.js.map": "/Quizzme/static/js/main.9f316726.chunk.js.map",
+    "runtime-main.js": "/Quizzme/static/js/runtime-main.4bb4c2df.js",
+    "runtime-main.js.map": "/Quizzme/static/js/runtime-main.4bb4c2df.js.map",
+    "static/css/2.8aa5a7f8.chunk.css": "/Quizzme/static/css/2.8aa5a7f8.chunk.css",
+    "static/js/2.d94aa3be.chunk.js": "/Quizzme/static/js/2.d94aa3be.chunk.js",
+    "static/js/2.d94aa3be.chunk.js.map": "/Quizzme/static/js/2.d94aa3be.chunk.js.map",
+    "index.html": "/Quizzme/index.html",
+    "precache-manifest.593513a89b2a82ea0eff889ab2253807.js": "/Quizzme/precache-manifest.593513a89b2a82ea0eff889ab2253807.js",
+    "service-worker.js": "/Quizzme/service-worker.js",
+    "static/css/2.8aa5a7f8.chunk.css.map": "/Quizzme/static/css/2.8aa5a7f8.chunk.css.map",
+    "static/css/main.1797f2cd.chunk.css.map": "/Quizzme/static/css/main.1797f2cd.chunk.css.map",
+    "static/js/2.d94aa3be.chunk.js.LICENSE.txt": "/Quizzme/static/js/2.d94aa3be.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4bb4c2df.js",
+    "static/css/2.8aa5a7f8.chunk.css",
+    "static/js/2.d94aa3be.chunk.js",
+    "static/css/main.1797f2cd.chunk.css",
+    "static/js/main.9f316726.chunk.js"
+  ]
+}
