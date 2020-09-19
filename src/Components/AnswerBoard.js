@@ -1,22 +1,31 @@
 import { getDefaultNormalizer } from '@testing-library/react';
 import React from 'react';
-import {Card, CardTitle,CardBody,Button } from 'reactstrap';
+import {Card, CardTitle,CardBody,Button,Col } from 'reactstrap';
 import question from '../questions/question'; 
+
+import '../css/answerboard.css';
 
 
 const AnswerBoard =({score,showAnswerBoard})=>{
     console.log(question);
     return(
         <div>
-            {question.map((qs)=>{
-                return (<Card>
-                    <CardTitle>{qs.qs}</CardTitle>
-                    <CardBody>
-                        <div>{qs.options[qs.answer]}</div>
-                    </CardBody>
-                </Card>);
-            })}
-            <Button onClick={showAnswerBoard}>Restart Quiz</Button>
+            <div className='ansContainer'>
+                {question.map((qs)=>{
+                    return (
+                        <Card className='cardContain'>
+                            <CardTitle><h4>{qs.qs}</h4></CardTitle>
+                            <CardBody>
+                                <div><h5>{qs.options[qs.answer]}</h5></div>
+                            </CardBody>
+                        </Card>
+                    );
+                })}
+                
+            </div>
+            <div className='endAnsBoard'>
+            <Button color="primary" onClick={showAnswerBoard}>Restart Quiz</Button>
+            </div>
         </div>
     )
 }

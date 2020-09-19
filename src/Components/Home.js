@@ -1,6 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'; 
 import {Card,CardTitle} from 'reactstrap';
 import QuizComponent from './QuizComponent';
+import '../css/home.css';
 
 import {ScoreBoardContext} from '../contexts/ScoreBoardContext';
 
@@ -14,7 +15,7 @@ const HomeComponent= ()=>{
     
     
     return(
-        <Card>
+        <Card className='homeCard' >
             <QuizComponent addScore={addScore} resetScore={resetScore} drcScore={decreaseScore} score={score} increaseTries={increaseTries} SuccessRate={SuccessRate}/>
         </Card>
     )

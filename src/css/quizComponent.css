@@ -1,0 +1,55 @@
+.containerDiv{
+    width: 650px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btnGroup{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    box-shadow: 10px 10px 5px grey;
+    padding-bottom: 1.5em;
+}
+
+.questionBoard{
+    font-weight: bold;
+    font-family: serif; 
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 10px 10px 5px grey;
+    padding-bottom: 1.5em;
+}
+
+.questionBoard li{
+    list-style-type: none;
+}
+
+.questionBoard li:hover{
+    background-color: #CD7866;
+    border-radius:2em;
+    cursor: pointer;
+    color:white;
+}
+
+.linebreak{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.btn{
+    margin:1%;
+}
+
+.modalContent {
+    align-items: center;
+}

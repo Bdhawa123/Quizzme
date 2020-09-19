@@ -1,10 +1,16 @@
 import React from 'react';
+import {Navbar} from 'reactstrap';
+
+import '../css/navbar.css';
 
 /* Basically continuation of Home and Logo integrated */
 
 const Footer = ()=>(
     <div>
-      Footer
+      <Navbar className='footer' >
+          Manez Co
+      </Navbar> 
+         
     </div>
     );
 

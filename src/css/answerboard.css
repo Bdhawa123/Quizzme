@@ -1,0 +1,18 @@
+.ansContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.cardContain{
+    width: 250px;
+    height: 175px;
+    margin: 8px;
+    text-align: center;
+}
+
+.endAnsBoard{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}

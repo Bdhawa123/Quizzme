@@ -1,0 +1,19 @@
+.profile {
+    border-radius: 25px !important;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    background-color: #D6E5C8  !important;
+    padding-bottom: 2.5em;
+}
+
+.profileContent {
+    text-align: center;
+    width: 200px;
+    border-radius: 1.75em;
+    margin-top: 2em;
+    background-color: white;
+    box-shadow: 10px 10px 5px grey;
+
+}
+

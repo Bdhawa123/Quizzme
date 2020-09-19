@@ -1,8 +1,10 @@
 import React,{useState,useEffect} from 'react';
 import question from '../questions/question';
-import {Container,Button,Modal,Card, CardBody, CardTitle} from 'reactstrap';
+import {Container,Button,Modal,Card, CardBody, CardTitle,ModalHeader} from 'reactstrap';
 import { queryAllByAltText } from '@testing-library/react';
 import AnswerBoard from './AnswerBoard';
+
+import '../css/quizComponent.css'
 
     /* Decoupling of quiz component */ 
 
@@ -101,36 +103,51 @@ const QuizComponent =({addScore,resetScore,drcScore,score,increaseTries,SuccessR
     }
 
     return(
-        <div>
+        <div className='containerDiv'>
             {/* Question anser mechanism */}
             {(!answerboard)?
-            <div>
-                {currentQuestion.qs}                                                                
+            <div className='questionBoard'>
+                <h2>{currentQuestion.qs}</h2>
                 {options.map((element,id)=>{
                     return(
                         <li onClick={()=>{qsans(id,answer)}}>
-                            {element}
+                           <h5> {element}</h5>
                         </li>
                     )
                 })
                 }
-                {prev?<Button onClick={previous}>Previous</Button>:null}
-                {nxt?<Button onClick={next}>Next</Button>:null}
-                {(!nxt)?<Button onClick={submit}>Submit</Button>:null}
-                <Button onClick={reset}>Reset</Button>
+                
             </div>
+            :null}
+            
+            {(!answerboard)?
+            <div>
+                <div className='btnGroup'>
+                    {prev?<Button color='primary' onClick={previous}>Previous</Button>:null}
+                    {nxt?<Button color='primary' onClick={next}>Next</Button>:null}
+                                
+                </div>
+                <div className ='linebreak'>
+                    <Button color='warning' onClick={reset}>Reset</Button>
+                    {(!nxt)?<Button color='success' onClick={submit}>Submit</Button>:null}
+                </div>
+                </div>
             :null}
 
             {/* Modal Component */}
+                <Modal isOpen={modal} onClick={()=>{setModal(false)}}>
+                <ModalHeader toggle={()=>{setModal(false)}}/>
 
-                <Modal isOpen={modal}>
-                    <Card>
-                        <CardTitle> SCORE</CardTitle>
-                            <CardBody>{score}</CardBody>
+                    <Card className='modalContent'>
+                        <CardTitle><h3>SCORE</h3></CardTitle>
+                        <CardBody><h4>{score}</h4></CardBody>
                     </Card>
-                    <Button onClick={showAnswerBoard}>Show Answers</Button>                                                {/* On click trigger */}
-                    <Button onClick={reset}>Restart</Button>
-               
+
+                    <div className='linebreak'>
+                        <Button  color='primary' onClick={showAnswerBoard}>Show Answers</Button>                                                {/* On click trigger */}
+                        <Button  color='danger' onClick={reset}>Restart</Button>
+                    </div>
+                      
                 </Modal>
 
             {/* Answer board */}

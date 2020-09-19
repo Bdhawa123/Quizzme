@@ -1,0 +1,38 @@
+.navBar{
+    background-color: #403C3B;
+    border-radius: 23px;
+    color:white;
+}
+
+.brandTag {
+    color:white;
+    font-weight: bold;
+    font-size: 1.75em !important;
+}
+
+
+
+.navigationTitles{
+    display: flex;
+    justify-content: space-between;
+    width: 7.5em;
+    font-weight: bold;
+}
+
+.navBarHover{
+    color:white;
+}
+
+.navBarHover:hover{
+    color:#CD7866;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: #403C3B;
+    border-radius: 23px;
+    color:white;
+    justify-content: flex-end !important;
+    font-weight: bold;
+}
